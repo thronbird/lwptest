@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="SpringAop"/>
+    <bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interfaces" value="SpringAop.Greeting"/>
+        <property name="target" ref="greetingImpl"/>
+        <property name="interceptorNames" value="greetingBeforeAndAdvice"/>
+
+    </bean>
+     <!-- 配置一个切面 -->
+    <!--<bean id="greetingAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor" >-->
+        <!--<property name="advice" ref="greetingBeforeAndAdvice" /> &lt;!&ndash; 增强 &ndash;&gt;-->
+        <!--<property name="pattern" value="SpringAop.aop.GreetingImpl.good.*"/> &lt;!&ndash; 切点（正则表达式） &ndash;&gt;-->
+    <!--</bean>-->
+    <!-- 配置一个代理 -->
+    <!--<bean id="greetingProxyForAdvisor" class="org.springframework.aop.framework.ProxyFactoryBean" >-->
+        <!--&lt;!&ndash; 目标类 &ndash;&gt;-->
+        <!--<property name="target" ref="greetingImpl"/>-->
+        <!--&lt;!&ndash; 切面 &ndash;&gt;-->
+        <!--<property name="interceptorNames" value="greetingAdvisor"/>-->
+
+        <!--&lt;!&ndash; 是否代理目标类 &ndash;&gt;-->
+        <!--<property name="proxyTargetClass" value="true" />-->
+    <!--</bean>-->
+    <!-- 可以为指定后缀的类动态的创建代理，这里不能用代理接口，应该代理类，因为不知道这些类实现了多少接口 -->
+    <!-- 既然cglib可以代理任何类，那么为什么jdk还需要用动态代理呢  ,cglib创建代理比较慢，创建完成以后很快，jdk则相反，各有优势-->
+    <!-- 以下这个是扫描到类，不能扫描到方法 -->
+    <!--<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator" >-->
+        <!--&lt;!&ndash; 指定后缀&ndash;&gt;-->
+        <!--<property name="beanNames" value="*Impl"/>-->
+        <!--&lt;!&ndash; 指定增强 &ndash;&gt;-->
+        <!--<property name="interceptorNames" value="greetingBeforeAndAdvice"/>-->
+        <!--<property name="optimize" value="true"/>&lt;!&ndash; 是否进行优化 &ndash;&gt;-->
+    <!--</bean>-->
+
+    <!-- 以下这个配置可以扫描到类方法 -->
+    <!-- 配置一个切面
+    <bean id="greetingAdvisorAutoScan" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice" ref="greetingBeforeAndAdvice" />
+        <property name="pattern" value="SpringAop.aop.GreetingImpl.good.*"/>
+
+    </bean>
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">
+        <property name="optimize" value="true"/>
+    </bean>
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy> -->
+
+</beans>
