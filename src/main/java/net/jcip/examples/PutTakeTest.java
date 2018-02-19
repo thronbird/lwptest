@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 /**
  * PutTakeTest
  * <p/>
- * Producer-consumer test program for BoundedBuffer
+ * Producer-consumer BigDecimal program for BoundedBuffer
  *
  * @author Brian Goetz and Tim Peierls
  */
