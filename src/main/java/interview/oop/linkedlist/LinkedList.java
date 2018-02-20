@@ -36,12 +36,10 @@ public class LinkedList<T> implements Iterable<T> {
       currentNode = head;
     }
 
-    @Override
     public boolean hasNext() {
       return currentNode != null;
     }
 
-    @Override
     public T next() {
       if (currentNode == null) {
         throw new NoSuchElementException();
@@ -52,7 +50,6 @@ public class LinkedList<T> implements Iterable<T> {
     }
   }
 
-  @Override
   public Iterator<T> iterator() {
     return new ListIterator(head);
   }

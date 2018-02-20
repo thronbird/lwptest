@@ -20,5 +20,8 @@ public class TestMain {
         //ªÒ»°bean
         TestBean tb = (TestBean) context.getBean("testBean");
         tb.sayHello();
+
+        DataSource ds = (DataSource) context.getBean("dataSource");
+        System.out.println(ds);
     }
 }
