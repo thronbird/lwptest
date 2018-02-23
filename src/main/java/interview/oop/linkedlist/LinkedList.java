@@ -48,6 +48,11 @@ public class LinkedList<T> implements Iterable<T> {
       currentNode = currentNode.getNext();
       return value;
     }
+
+    @Override
+    public void remove() {
+
+    }
   }
 
   public Iterator<T> iterator() {
