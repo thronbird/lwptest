@@ -1,7 +1,4 @@
-package ThreadLocal;
-
-import java.util.Collection;
-import java.util.Collections;
+package Thread.ThreadLocal;
 
 public class SequenceB implements Sequence{
 

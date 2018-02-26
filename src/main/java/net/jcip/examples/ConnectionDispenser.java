@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * ConnectionDispenser
  * <p/>
- * Using ThreadLocal to ensure thread confinement
+ * Using Thread.ThreadLocal to ensure thread confinement
  *
  * @author Brian Goetz and Tim Peierls
  */

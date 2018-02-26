@@ -1,4 +1,4 @@
-package ThreadLocal;
+package Thread.ThreadLocal;
 
 public class ClientThread extends  Thread{
     private Sequence seq;
