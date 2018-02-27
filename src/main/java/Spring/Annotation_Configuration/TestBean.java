@@ -18,10 +18,10 @@ public class TestBean {
     }
 
     public void start() {
-        System.out.println("TestBean ³õÊ¼»¯¡£¡£¡£");
+        System.out.println("TestBean start ");
     }
 
     public void cleanUp() {
-        System.out.println("TestBean Ïú»Ù¡£¡£¡£");
+        System.out.println("TestBean destroy ");
     }
 }

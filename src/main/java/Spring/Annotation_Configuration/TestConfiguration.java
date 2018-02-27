@@ -12,11 +12,11 @@ import org.springframework.context.annotation.Scope;
 @ComponentScan(basePackages = "Spring.Annotation_Configuration")
 public class TestConfiguration {
     public TestConfiguration() {
-        System.out.println("TestConfigurationÈİÆ÷Æô¶¯³õÊ¼»¯¡£¡£¡£");
+        System.out.println("TestConfigurationå®¹å™¨å¯åŠ¨åˆå§‹åŒ–ã€‚ã€‚ã€‚");
     }
 
 
-    // @Bean×¢½â×¢²ábean,Í¬Ê±¿ÉÒÔÖ¸¶¨³õÊ¼»¯ºÍÏú»Ù·½·¨
+    // @Beanæ³¨è§£æ³¨å†Œbean,åŒæ—¶å¯ä»¥æŒ‡å®šåˆå§‹åŒ–å’Œé”€æ¯æ–¹æ³•
     // @Bean(name="testBean",initMethod="start",destroyMethod="cleanUp")
     @Bean(name="testBean",initMethod="start",destroyMethod="cleanUp")
     @Scope("prototype")

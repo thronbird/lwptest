@@ -9,15 +9,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class TestMain {
     public static void main(String[] args) {
-
-        // @Configuration×¢½âµÄspringÈİÆ÷¼ÓÔØ·½Ê½£¬ÓÃAnnotationConfigApplicationContextÌæ»»ClassPathXmlApplicationContext
+        // @Configurationæ³¨è§£çš„springå®¹å™¨åŠ è½½æ–¹å¼ï¼Œç”¨AnnotationConfigApplicationContextæ›¿æ¢ClassPathXmlApplicationContext
         ApplicationContext context = new AnnotationConfigApplicationContext(TestConfiguration.class);
 
-        // Èç¹û¼ÓÔØspring-context.xmlÎÄ¼ş£º
+        // å¦‚æœåŠ è½½spring-context.xmlæ–‡ä»¶ï¼š
         // ApplicationContext context = new
         // ClassPathXmlApplicationContext("spring-context.xml");
 
-        //»ñÈ¡bean
+        //è·å–bean
         TestBean tb = (TestBean) context.getBean("testBean");
         tb.sayHello();
 
