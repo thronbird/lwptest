@@ -4,6 +4,13 @@ public class PSGCDirectOldDemo {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws InterruptedException {
+		/*S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
+		0.00   0.00  33.35   0.00  17.44  19.76      0    0.000     0    0.000    0.000
+		0.00   0.00  58.35   0.00  17.44  19.76      0    0.000     0    0.000    0.000
+		0.00   0.00  83.35   0.00  17.44  19.76      0    0.000     0    0.000    0.000
+		0.00  82.67  25.00  40.08  66.59  68.88      1    0.003     0    0.000    0.003
+		0.00  82.67  25.00  40.08  66.59  68.88      1    0.003     0    0.000    0.003*/
+
 		byte[] bytes = new byte[1024*1024*2];
 		byte[] bytes2 = new byte[1024*1024*2];
 		byte[] bytes3 = new byte[1024*1024*2];
