@@ -24,6 +24,7 @@ public class VolatileAtomicTest {
                 }
             }.start();
         }
+
         countDownLatch.await();
         System.out.println(volatileAtomicTest.i);
     }
