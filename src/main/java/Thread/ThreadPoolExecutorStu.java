@@ -39,6 +39,8 @@ public class ThreadPoolExecutorStu {
 
     public static void main(String[] args) {
         Long start = System.currentTimeMillis();
+        //ClassLoader classLoder = Thread.currentThread().getContextClassLoader();
+        ClassLoader.getSystemClassLoader();
         /**
          * ITDragonThreadPoolExecutor 耗时 1503
          * ITDragonFixedThreadPool 耗时 505

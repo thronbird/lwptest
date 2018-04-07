@@ -1,4 +1,4 @@
-package hotdeploy;
+package Classloader.hotdeploy;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

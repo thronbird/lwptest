@@ -51,5 +51,10 @@
             <artifactId>spring-jdbc</artifactId>
             <version>5.0.3.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.unipay.dsf</groupId>
+            <artifactId>dataSearch-api</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

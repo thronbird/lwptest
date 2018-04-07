@@ -1,4 +1,4 @@
-package hotdeploy;
+package Classloader.hotdeploy;
 
 /**
  * @title 测试类
