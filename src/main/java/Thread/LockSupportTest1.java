@@ -3,8 +3,11 @@ package Thread;
 /**
  * Created by liwanping on 2018-03-22
  */
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.concurrent.locks.LockSupport;
 
+@Transactional
 public class LockSupportTest1 {
 
     private static Thread mainThread;

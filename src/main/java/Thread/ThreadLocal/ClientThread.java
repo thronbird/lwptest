@@ -1,5 +1,8 @@
 package Thread.ThreadLocal;
 
+/**
+  from 从零开始写javaweb框架
+ */
 public class ClientThread extends  Thread{
     private Sequence seq;
 

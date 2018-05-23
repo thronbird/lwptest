@@ -42,4 +42,9 @@ public class BigDecimalTest {
 
     }
 
+    @Test
+    public void test4(){
+        System.out.println(new BigDecimal("1.1").multiply(new BigDecimal("1000")).toBigInteger());
+        System.out.println(new BigDecimal("1.1").multiply(new BigDecimal("1000")).setScale(0));
+    }
 }
