@@ -21,8 +21,11 @@ public class HashMapTest {
         // 添加操作
         map.put("one", r.nextInt(10));
         map.put("two", r.nextInt(10));
-        map.put("three", r.nextInt(10));
 
+        System.out.println((String)map.get("backurl")==null);
+        System.out.println((String)null);
+
+        map.remove("three");
         // 打印出map
         System.out.println("map:"+map );
 
