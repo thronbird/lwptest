@@ -16,7 +16,7 @@
     <bean id="beanFactoryPostProcessor" class="Spring.springBeanTest.MyBeanFactoryPostProcessor">
     </bean>
 
-    <bean id="person" class="Spring.springBeanTest.Person" init-method="myInit"
+    <bean id="user" class="Spring.springBeanTest.Person" init-method="myInit"
           destroy-method="myDestory" scope="singleton" p:name="张三" p:address="广州"
           p:phone="15900000000" />
 

@@ -12,13 +12,13 @@ import java.util.Set;
  */
 public class BeanPropTest {
 
-    static void setPersonName(Person x){
-        x.name="xxx";
+    static void setPersonName(User x){
+        x.setName("xxx");
     }
 
     public static void main (String[] args ) throws InvocationTargetException, IllegalAccessException {
-        Person a = new Person();
-        Person b=new Person();
+        User a = new User();
+        User b=new User();
         setPersonName(b);
         a.setAge(33);
         copyPropertiesIgnoreNull(a,b);

@@ -1,10 +1,11 @@
 /**
+ * 测试javabean
  * @author liwanping
  * @date 2018-05-29
  */
-public class Person {
-    String name;
-    int age;
+public class User {
+    private String name;
+    private int age;
 
     public String getName() {
         return name;
@@ -24,7 +25,7 @@ public class Person {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Person{");
+        final StringBuilder sb = new StringBuilder("User{");
         sb.append("name='").append(name).append('\'');
         sb.append(", age=").append(age);
         sb.append('}');
