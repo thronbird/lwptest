@@ -40,4 +40,11 @@ public class StringTest {
         sb3.append("bbb");//这时候HashSet里是{"aaabbb","aaabbb"}
         System.out.println(hs);
     }
+
+    @Test
+    public void test3(){
+        System.out.println("78789922".replace("8","")
+        );
+
+    }
 }
