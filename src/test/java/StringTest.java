@@ -1,3 +1,4 @@
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -43,8 +44,32 @@ public class StringTest {
 
     @Test
     public void test3(){
-        System.out.println("78789922".replace("8","")
+        System.out.println("xxxx"+"".replace("8","")
         );
+    }
+    @Test
+    public void test4(){
+        System.out.println((String)null);
 
+        if(8==8){
+            System.out.println(555);
+        }else if(5==5){
+            System.out.println(5565);
+        }
+    }
+
+    @Test
+    public void test5(){
+    //    System.out.println(StringUtils null);
+        if(8==8){
+            System.out.println(555);
+        }else if(5==5){
+            System.out.println(5565);
+        }
+    }
+
+    @Test
+    public void test6(){
+        System.out.println((String)null==null);
     }
 }
