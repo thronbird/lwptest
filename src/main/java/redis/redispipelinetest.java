@@ -61,7 +61,7 @@ public class redispipelinetest {
 			jedis = new Jedis("127.0.0.1", 6379);
 			jedis.flushDB();
 			for (int i = 1; i <= 10000; i++) {
-				jedis.lpush("bcScheduleOrderCache", "{Bill{billid=1113005515, transactiontype='充值', status='处理中', inputdate=Wed Aug 15 10:24:02 CST 2018, businessrecordnumber='1018081510243410002', businesstype='银联充值', updatedate=Wed Aug 15 14:11:06 CST 2018, refundtype='null', paymethod='bankPay'}");
+				jedis.lpush("bcScheduleOrderCache", "{\"billid\":1113013691,\"frompartyid\":567947973,\"fromaccountnumber\":\"8801111111377\",\"fromrealname\":\"测试AFS\",\"businessnumber\":\"6318082815284910005\",\"transactiontype\":\"提现\",\"transactionsite\":\"全网\",\"transactiondate\":\"Aug 28, 2018 3:28:23 PM\",\"transactionamount\":\"1.00\",\"description\":\"商户提现\",\"status\":\"成功\",\"inputman\":\"测试AFS\",\"inputdate\":\"Aug 28, 2018 3:28:19 PM\",\"transactionnumber\":\"1118082815285210001\",\"appid\":\"enterprise\",\"terminal\":\"\",\"businessrecordnumber\":\"2918082815283920001\",\"businesstype\":\"商户提现\",\"updatedate\":\"Aug 28, 2018 3:28:23 PM\",\"merchantaccountnumber\":\"5688130133018597\",\"bankcardnumber\":\"11111111111111\",\"channelname\":\"TEST401\",\"customerip\":\"\",\"clientdfp\":\"\",\"tasktime\":\"D0_12\",\"fee\":\"0.00\",\"sign_type\":\"MD5\"}");
 			}
 		} finally {
 			jedis.close();
