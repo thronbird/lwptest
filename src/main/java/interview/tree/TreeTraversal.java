@@ -51,7 +51,7 @@ public class TreeTraversal {
     TreeCreator creator = new TreeCreator();
     TreeTraversal traversal = new TreeTraversal();
 
-    System.out.println("Sample tree traversal");
+    System.out.println("JAVA8.lambdaDesignPattern.LightweightStrategy tree traversal");
     System.out.println("=====");
     TreeNode sampleTree = creator.createSampleTree();
     traversal.preOrder(sampleTree);

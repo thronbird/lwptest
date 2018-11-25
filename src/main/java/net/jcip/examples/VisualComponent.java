@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 /**
  * VisualComponent
  * <p/>
- * Delegating thread safety to multiple underlying state variables
+ * JAVA8.lambdaDesignPattern.Delegating thread safety to multiple underlying state variables
  *
  * @author Brian Goetz and Tim Peierls
  */

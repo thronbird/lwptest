@@ -10,7 +10,7 @@ import net.jcip.annotations.*;
 /**
  * DelegatingVehicleTracker
  * <p/>
- * Delegating thread safety to a ConcurrentHashMap
+ * JAVA8.lambdaDesignPattern.Delegating thread safety to a ConcurrentHashMap
  *
  * @author Brian Goetz and Tim Peierls
  */

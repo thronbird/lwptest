@@ -3,6 +3,7 @@ package Thread;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author liwanping
@@ -34,6 +35,8 @@ public class InterruptTest {
                 }
             }
             System.out.println("exit");
+            List<String>[] x = null;
+            x[1].isEmpty();
         }
 
         public void cancel() {

@@ -51,4 +51,15 @@ public class ExceptionTest {
             }
         }
     }
+
+    @Test
+    public  void test4() throws Exception {
+        try{
+            throwGeneralExecption();
+        }catch (RuntimeException e){
+            throwGeneralExecption();
+        }catch (Exception e){
+            System.out.println("yyy");
+        }
+    }
 }

@@ -103,5 +103,10 @@
             <artifactId>lombok</artifactId>
             <version>1.16.20</version>
         </dependency>
+        <dependency>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-client</artifactId>
+            <version>5.0.1</version>
+        </dependency>
     </dependencies>
 </project>

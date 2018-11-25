@@ -10,7 +10,7 @@ public class EnumEntity {
 
         OPEN{
             @Override
-            void prceed(EnumEntity enumEntity) {
+            void proceed(EnumEntity enumEntity) {
                 enumEntity.state = PENDING_APPROVAL;
             }
             @Override
@@ -20,7 +20,7 @@ public class EnumEntity {
 
         },
         PENDING_APPROVAL{
-            void prceed(EnumEntity enumEntity) {
+            void proceed(EnumEntity enumEntity) {
                 enumEntity.state = APPROVED;
             }
             @Override
@@ -29,7 +29,7 @@ public class EnumEntity {
             }
         },
         APPROVED{
-            void prceed(EnumEntity enumEntity) {
+            void proceed(EnumEntity enumEntity) {
                 enumEntity.state = CLOSED;
                 sendNotifcation(enumEntity);
             }
@@ -39,7 +39,7 @@ public class EnumEntity {
             }
         },
         CLOSED{
-            void prceed(EnumEntity enumEntity) {
+            void proceed(EnumEntity enumEntity) {
                 throw new RuntimeException("EnumEntity already closed");
             }
             @Override
@@ -48,7 +48,7 @@ public class EnumEntity {
             }
         };
 
-        abstract void prceed(EnumEntity enumEntity);
+        abstract void proceed(EnumEntity enumEntity);
 
         abstract void notifyMerchant(EnumEntity enumEntity);
     }
@@ -64,7 +64,7 @@ public class EnumEntity {
     }
 
     public void proceed(){
-        this.state.prceed(this);
+        this.state.proceed(this);
     }
 
     private static void sendNotifcation(EnumEntity enumEntity){}
