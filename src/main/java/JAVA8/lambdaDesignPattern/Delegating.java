@@ -1,5 +1,6 @@
 package JAVA8.lambdaDesignPattern;
 
+import java.util.ArrayList;
 import java.util.function.Function;
 
 class CalculateNAV {
@@ -23,7 +24,6 @@ class StockFetcher {
 
 public class Delegating {
   public static void main(String[] args) {
-    
     //In test case
     CalculateNAV calculateNAV = new CalculateNAV(ticker -> 33.33);
         

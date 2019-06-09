@@ -2,6 +2,7 @@ package generictype;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GenericTypeTest<A> {
@@ -10,6 +11,7 @@ public class GenericTypeTest<A> {
     public static void main(String[] args) {
         GenericTypeTest<String> test = new GenericTypeTest<String>();
         test.list.add("Hello");
+        Arrays.asList("2","33");
         System.out.println(test.list);
 
         //The  error  message  complains,  in  cryptic  terms  that  vary  from  one compiler
@@ -20,7 +22,7 @@ public class GenericTypeTest<A> {
 //        type. In this case, the remedy is to write all parameters as  double  values.
         Number middle = getMiddle(3.14, 1729, 0);
     }
-    public static <T extends Comparable  & Serializable> T min(T[] a) //ÉêÃ÷´øÓÐÊµÏÖÁËcomparableºÍSerializableµÄ·ºÐÍÀàµÄ·½·¨
+    public static <T extends Comparable  & Serializable> T min(T[] a) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½comparableï¿½ï¿½Serializableï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
     {
         if (a == null || a.length == 0) return null;
         T smallest = a[0];

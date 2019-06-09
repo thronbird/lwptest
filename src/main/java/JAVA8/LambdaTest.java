@@ -1,11 +1,14 @@
 package JAVA8;
 
-import ArtConcurrentBook.chapter04.Interrupted;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -63,5 +66,47 @@ public class LambdaTest {
         Integer[] a = {1,2};
         List<Integer> x  = Arrays.asList(a);
         System.out.println(x);
+    }
+
+
+    @Test
+    public void mains2 (){
+        String appidList = "222,333";
+        Arrays.stream(appidList.split(",")).forEach(appid -> {
+            try {
+                System.out.println(appid);
+                throw new RuntimeException("");
+            } catch (Exception e) {
+                return;
+            }
+        });
+
+    }
+
+    @Test
+    public void filterMap (){
+        Map<Integer, String> hmap = new HashMap<Integer, String>();
+        hmap.put(11, "Apple");
+        hmap.put(22, "Orange");
+        hmap.put(33, "Kiwi");
+        hmap.put(44, "Banana");
+        Map<Integer, String> result = hmap.entrySet()
+                .stream()
+                .filter(map -> "Orange".equals(map.getValue()))
+                .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+
+        //---切分集合
+        Set<Integer> brnSet = hmap.keySet();
+        int MAX_NUMBER = 3;
+        //计算切分次数
+        int limit = (brnSet.size() + MAX_NUMBER - 1) / MAX_NUMBER;
+        //取分割后的集合
+        List<List<Integer>> splitList = Stream.iterate(0, n -> n + 1).limit(limit).parallel()
+                .map(a -> brnSet.stream().skip(a * MAX_NUMBER)
+                        .limit(MAX_NUMBER).parallel().collect(Collectors.toList()))
+                .collect(Collectors.toList());
+        splitList.forEach( brnlist ->{
+
+        });
     }
 }

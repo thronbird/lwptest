@@ -18,7 +18,7 @@ import java.util.List;
 public class JacksonTest {
     public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
         ObjectMapper mapper = new ObjectMapper();
-        String json = "[{\"user_name\":\"bflee\",\"id_number\":\"123456\"},{\"user_name\":\"balee\",\"id_number\":\"123456\"}]";
+        String json = "[{\"order_id\":\"rjowejhrwekl\",\"trx_amount\":\"11\",\"payee_acc_no\":\"\",\"bk_acc_type\":\"01\",\"bk_name\":\"中国建设银行\",\"bk_card_type\":\"个人\",\"bk_card_no\":\"6227005372352331064\",\"bk_card_name\":\"王伟\",\"branch_bk_name\":\"支行\",\"branch_bk_no\":\"联行号\",\"province\":\"省\",\"city\":\"地市\"}]";
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
         List<O> o = mapper.readValue(json, new TypeReference<List<O>>() { });
         System.out.println(o);
