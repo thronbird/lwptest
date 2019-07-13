@@ -25,6 +25,6 @@ public class TableDrivenDesign {
         actionMappings.put("1", (someParams) -> {return(doxx(someParams)); });
         actionMappings.put("2", tableDrivenDesign::doyy);
         actionMappings.put("3", (someParams) -> {return(someParams+"airplane go"); });
-        System.out.println(actionMappings.get("2").apply("lwp").toString());
+        System.out.println(actionMappings.get("2").apply("liwanping").toString());
     }
 }

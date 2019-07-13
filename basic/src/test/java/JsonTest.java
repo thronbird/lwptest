@@ -15,14 +15,14 @@ public class JsonTest {
       String msg2 = Base64.encodeBase64String(new GsonBuilder().serializeNulls().create().toJson(msgMap).getBytes("UTF-8"));
         System.out.println(msg1);
         System.out.println(msg2);
-        Map<String, Object> bb= (Map<String, Object>) JSONObject.fromObject("{\"remark\":null,\"xx\":\"yy\"}");
+        Map<String, Object> bb= (Map<String, Object>) JSONObject.fromObject("{\"remark\":null,\"classloader\":\"yy\"}");
         String send = Base64.encodeBase64String(new GsonBuilder().serializeNulls().create().toJson(bb).getBytes("UTF-8"));
         System.out.println(send);
-        //   Map<String, Object> map = new Gson().fromJson("{\"remark\":null,\"xx\":\"yy\"}", Map.class);
+        //   Map<String, Object> map = new Gson().fromJson("{\"remark\":null,\"classloader\":\"yy\"}", Map.class);
         //        String send = Base64.encodeBase64String(new GsonBuilder().serializeNulls().create().toJson(map).getBytes("UTF-8"));
         //        System.out.println(send);//eyJyZW1hcmsiOm51bGwsInh4IjoieXkifQ==
         //eyJyZW1hcmsiOnt9LCJ4eCI6Inl5In0=
-        String base64String = Base64.encodeBase64String("{\"remark\":null,\"xx\":\"yy\"}".getBytes("UTF-8"));
+        String base64String = Base64.encodeBase64String("{\"remark\":null,\"classloader\":\"yy\"}".getBytes("UTF-8"));
         System.out.println(base64String);
     }
 }

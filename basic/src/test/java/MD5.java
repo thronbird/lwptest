@@ -39,7 +39,7 @@ public class MD5 {
 		params.put("bankcardtype","个人");//银行卡类型
 		params.put("bankaccounttype","储蓄卡");//银行卡借贷类型
 		params.put("fromaccountnumber","8800009809867");//会员账号名 8800009866399
-		params.put("backurl", "com.lwptest.basic.http://peng4400.free.ngrok.cc/api/draw/callback/form/1111112211222");
+		params.put("backurl", "com.lwptest.Basic.http://peng4400.free.ngrok.cc/api/draw/callback/form/1111112211222");
 //		
 //		sign(params,"08Oe4YI71I5S3e72qYT2");
 

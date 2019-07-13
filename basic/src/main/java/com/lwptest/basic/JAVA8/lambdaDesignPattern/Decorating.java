@@ -6,7 +6,7 @@ import java.util.function.*;
 import java.util.stream.Stream;
 
 /**
- * com.lwptest.basic.JAVA8.lambdaDesignPattern.Decorating Pattern
+ * com.lwptest.Basic.JAVA8.lambdaDesignPattern.Decorating Pattern
  * @author liwanping
  * @date 2018-11-10 15:53
  **/

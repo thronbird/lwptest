@@ -27,7 +27,7 @@ public class JvmBlockDemo {
         int i = 0;
         while (i < 100) {
             if (i == 0) {
-                //com.lwptest.basic.Thread.sleep(15000);
+                //com.lwptest.Basic.Thread.sleep(15000);
                 System.out.println("start=[" + new Date() + "]");
             } else {
                 Thread.sleep(3000);

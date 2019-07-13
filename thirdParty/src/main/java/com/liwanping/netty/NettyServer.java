@@ -1,4 +1,4 @@
-package netty;
+package com.liwanping.netty;
 
 /**
  * @author liwanping

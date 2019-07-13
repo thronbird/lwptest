@@ -42,13 +42,13 @@ public class LambdaTest {
 
         List<Integer> xx= Arrays.asList(1,2,3,9,4);
         //同时存在instance method &static method 编译能通过 但是运行时会报错：无法推断出方法--因为有两个备选
-        //System.out.println(xx.stream().map(Integer::toString));
+        //System.out.println(classloader.stream().map(Integer::toString));
         //指定方法即可
         System.out.println(xx.stream().map(e->Integer.toString(e)));
         System.out.println(xx.stream().reduce(0,(total,e)->Integer.sum(total,e)));
         System.out.println("reduce ="+xx.stream().reduce(0,(total,e)->Integer.max(total,e)));
-        //System.out.println(xx.stream().reduce(0,Integer::sum));
-        //xx.stream().filter()
+        //System.out.println(classloader.stream().reduce(0,Integer::sum));
+        //classloader.stream().filter()
         System.out.println("collector ="+ xx.stream().filter(e -> e % 2 == 0).collect(Collectors.toList()));
         System.out.println(Stream.iterate(0, e -> e+1).limit(44).toArray().length);
         new Thread(()-> System.out.println("xxxxxx")).run();

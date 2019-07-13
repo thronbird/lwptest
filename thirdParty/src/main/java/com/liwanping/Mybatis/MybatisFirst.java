@@ -1,6 +1,6 @@
-package Mybatis;
+package com.liwanping.Mybatis;
 
-import Mybatis.po.User;
+import com.liwanping.Mybatis.po.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

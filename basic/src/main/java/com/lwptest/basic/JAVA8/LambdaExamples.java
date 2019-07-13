@@ -201,7 +201,7 @@ public class LambdaExamples {
         items.stream().reduce(0,Integer::sum);
 
         //-----case 5----------
-        //one parameter becomes target and com.lwptest.basic.other becomes argument
+        //one parameter becomes target and com.lwptest.Basic.other becomes argument
         items.stream().map(String:: valueOf).reduce("",(carry, str) -> carry.concat(str));
         //here carry becomes target and str becomes argument
         items.stream().map(String::valueOf).reduce("",String::concat);
@@ -343,7 +343,7 @@ public class LambdaExamples {
 
         @Override
         public boolean pick(int value) {
-            return value %2==0; //this is the essence of this class rest com.lwptest.basic.other code is ceremony so in lambda we only focus on essence.
+            return value %2==0; //this is the essence of this class rest com.lwptest.Basic.other code is ceremony so in lambda we only focus on essence.
         }
 
     }

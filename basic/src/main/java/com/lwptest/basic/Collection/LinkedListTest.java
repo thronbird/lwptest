@@ -6,157 +6,157 @@ package com.lwptest.basic.Collection;
 import java.util.LinkedList;
 
 /*
- * @desc LinkedList²âÊÔ³ÌĞò¡£
+ * @desc LinkedListæµ‹è¯•ç¨‹åºã€‚
  *
  * @author skywang
  * @email  kuiwu-wang@163.com
  */
 public class LinkedListTest {
     public static void main(String[] args) {
-        // ²âÊÔLinkedListµÄAPI
+        // æµ‹è¯•LinkedListçš„API
         testLinkedListAPIs() ;
 
-        // ½«LinkedListµ±×÷ LIFO(ºó½øÏÈ³ö)µÄ¶ÑÕ»
+        // å°†LinkedListå½“ä½œ LIFO(åè¿›å…ˆå‡º)çš„å †æ ˆ
         useLinkedListAsLIFO();
 
-        // ½«LinkedListµ±×÷ FIFO(ÏÈ½øÏÈ³ö)µÄ¶ÓÁĞ
+        // å°†LinkedListå½“ä½œ FIFO(å…ˆè¿›å…ˆå‡º)çš„é˜Ÿåˆ—
         useLinkedListAsFIFO();
     }
 
     /*
-     * ²âÊÔLinkedListÖĞ²¿·ÖAPI
+     * æµ‹è¯•LinkedListä¸­éƒ¨åˆ†API
      */
     private static void testLinkedListAPIs() {
         String val = null;
         //LinkedList llist;
         //llist.offer("10");
-        // ĞÂ½¨Ò»¸öLinkedList
+        // æ–°å»ºä¸€ä¸ªLinkedList
         LinkedList llist = new LinkedList();
-        //---- Ìí¼Ó²Ù×÷ ----
-        // ÒÀ´ÎÌí¼Ó1,2,3
+        //---- æ·»åŠ æ“ä½œ ----
+        // ä¾æ¬¡æ·»åŠ 1,2,3
         llist.add("1");
         llist.add("2");
         llist.add("3");
 
-        // ½«¡°4¡±Ìí¼Óµ½µÚÒ»¸öÎ»ÖÃ
+        // å°†â€œ4â€æ·»åŠ åˆ°ç¬¬ä¸€ä¸ªä½ç½®
         llist.add(1, "4");
 
 
         System.out.println("\nTest \"addFirst(), removeFirst(), getFirst()\"");
-        // (01) ½«¡°10¡±Ìí¼Óµ½µÚÒ»¸öÎ»ÖÃ¡£  Ê§°ÜµÄ»°£¬Å×³öÒì³££¡
+        // (01) å°†â€œ10â€æ·»åŠ åˆ°ç¬¬ä¸€ä¸ªä½ç½®ã€‚  å¤±è´¥çš„è¯ï¼ŒæŠ›å‡ºå¼‚å¸¸ï¼
         llist.addFirst("10");
         System.out.println("llist:"+llist);
-        // (02) ½«µÚÒ»¸öÔªËØÉ¾³ı¡£        Ê§°ÜµÄ»°£¬Å×³öÒì³££¡
+        // (02) å°†ç¬¬ä¸€ä¸ªå…ƒç´ åˆ é™¤ã€‚        å¤±è´¥çš„è¯ï¼ŒæŠ›å‡ºå¼‚å¸¸ï¼
         System.out.println("llist.removeFirst():"+llist.removeFirst());
         System.out.println("llist:"+llist);
-        // (03) »ñÈ¡µÚÒ»¸öÔªËØ¡£          Ê§°ÜµÄ»°£¬Å×³öÒì³££¡
+        // (03) è·å–ç¬¬ä¸€ä¸ªå…ƒç´ ã€‚          å¤±è´¥çš„è¯ï¼ŒæŠ›å‡ºå¼‚å¸¸ï¼
         System.out.println("llist.getFirst():"+llist.getFirst());
 
 
         System.out.println("\nTest \"offerFirst(), pollFirst(), peekFirst()\"");
-        // (01) ½«¡°10¡±Ìí¼Óµ½µÚÒ»¸öÎ»ÖÃ¡£  ·µ»Øtrue¡£
+        // (01) å°†â€œ10â€æ·»åŠ åˆ°ç¬¬ä¸€ä¸ªä½ç½®ã€‚  è¿”å›trueã€‚
         llist.offerFirst("10");
         System.out.println("llist:"+llist);
-        // (02) ½«µÚÒ»¸öÔªËØÉ¾³ı¡£        Ê§°ÜµÄ»°£¬·µ»Ønull¡£
+        // (02) å°†ç¬¬ä¸€ä¸ªå…ƒç´ åˆ é™¤ã€‚        å¤±è´¥çš„è¯ï¼Œè¿”å›nullã€‚
         System.out.println("llist.pollFirst():"+llist.pollFirst());
         System.out.println("llist:"+llist);
-        // (03) »ñÈ¡µÚÒ»¸öÔªËØ¡£          Ê§°ÜµÄ»°£¬·µ»Ønull¡£
+        // (03) è·å–ç¬¬ä¸€ä¸ªå…ƒç´ ã€‚          å¤±è´¥çš„è¯ï¼Œè¿”å›nullã€‚
         System.out.println("llist.peekFirst():"+llist.peekFirst());
 
 
         System.out.println("\nTest \"addLast(), removeLast(), getLast()\"");
-        // (01) ½«¡°20¡±Ìí¼Óµ½×îºóÒ»¸öÎ»ÖÃ¡£  Ê§°ÜµÄ»°£¬Å×³öÒì³££¡
+        // (01) å°†â€œ20â€æ·»åŠ åˆ°æœ€åä¸€ä¸ªä½ç½®ã€‚  å¤±è´¥çš„è¯ï¼ŒæŠ›å‡ºå¼‚å¸¸ï¼
         llist.addLast("20");
         System.out.println("llist:"+llist);
-        // (02) ½«×îºóÒ»¸öÔªËØÉ¾³ı¡£        Ê§°ÜµÄ»°£¬Å×³öÒì³££¡
+        // (02) å°†æœ€åä¸€ä¸ªå…ƒç´ åˆ é™¤ã€‚        å¤±è´¥çš„è¯ï¼ŒæŠ›å‡ºå¼‚å¸¸ï¼
         System.out.println("llist.removeLast():"+llist.removeLast());
         System.out.println("llist:"+llist);
-        // (03) »ñÈ¡×îºóÒ»¸öÔªËØ¡£          Ê§°ÜµÄ»°£¬Å×³öÒì³££¡
+        // (03) è·å–æœ€åä¸€ä¸ªå…ƒç´ ã€‚          å¤±è´¥çš„è¯ï¼ŒæŠ›å‡ºå¼‚å¸¸ï¼
         System.out.println("llist.getLast():"+llist.getLast());
 
 
         System.out.println("\nTest \"offerLast(), pollLast(), peekLast()\"");
-        // (01) ½«¡°20¡±Ìí¼Óµ½µÚÒ»¸öÎ»ÖÃ¡£  ·µ»Øtrue¡£
+        // (01) å°†â€œ20â€æ·»åŠ åˆ°ç¬¬ä¸€ä¸ªä½ç½®ã€‚  è¿”å›trueã€‚
         llist.offerLast("20");
         System.out.println("llist:"+llist);
-        // (02) ½«µÚÒ»¸öÔªËØÉ¾³ı¡£        Ê§°ÜµÄ»°£¬·µ»Ønull¡£
+        // (02) å°†ç¬¬ä¸€ä¸ªå…ƒç´ åˆ é™¤ã€‚        å¤±è´¥çš„è¯ï¼Œè¿”å›nullã€‚
         System.out.println("llist.pollLast():"+llist.pollLast());
         System.out.println("llist:"+llist);
-        // (03) »ñÈ¡µÚÒ»¸öÔªËØ¡£          Ê§°ÜµÄ»°£¬·µ»Ønull¡£
+        // (03) è·å–ç¬¬ä¸€ä¸ªå…ƒç´ ã€‚          å¤±è´¥çš„è¯ï¼Œè¿”å›nullã€‚
         System.out.println("llist.peekLast():"+llist.peekLast());
 
 
 
-        // ½«µÚ3¸öÔªËØÉèÖÃ300¡£²»½¨ÒéÔÚLinkedListÖĞÊ¹ÓÃ´Ë²Ù×÷£¬ÒòÎªĞ§ÂÊµÍ£¡
+        // å°†ç¬¬3ä¸ªå…ƒç´ è®¾ç½®300ã€‚ä¸å»ºè®®åœ¨LinkedListä¸­ä½¿ç”¨æ­¤æ“ä½œï¼Œå› ä¸ºæ•ˆç‡ä½ï¼
         llist.set(2, "300");
-        // »ñÈ¡µÚ3¸öÔªËØ¡£²»½¨ÒéÔÚLinkedListÖĞÊ¹ÓÃ´Ë²Ù×÷£¬ÒòÎªĞ§ÂÊµÍ£¡
+        // è·å–ç¬¬3ä¸ªå…ƒç´ ã€‚ä¸å»ºè®®åœ¨LinkedListä¸­ä½¿ç”¨æ­¤æ“ä½œï¼Œå› ä¸ºæ•ˆç‡ä½ï¼
         System.out.println("\nget(3):"+llist.get(2));
 
 
         // ---- toArray(T[] a) ----
-        // ½«LinkedList×ªĞĞÎªÊı×é
+        // å°†LinkedListè½¬è¡Œä¸ºæ•°ç»„
         String[] arr = (String[])llist.toArray(new String[0]);
         for (String str:arr)
             System.out.println("str:"+str);
 
-        // Êä³ö´óĞ¡
+        // è¾“å‡ºå¤§å°
         System.out.println("size:"+llist.size());
-        // Çå¿ÕLinkedList
+        // æ¸…ç©ºLinkedList
         llist.clear();
-        // ÅĞ¶ÏLinkedListÊÇ·ñÎª¿Õ
+        // åˆ¤æ–­LinkedListæ˜¯å¦ä¸ºç©º
         System.out.println("isEmpty():"+llist.isEmpty()+"\n");
 
     }
 
     /**
-     * ½«LinkedListµ±×÷ LIFO(ºó½øÏÈ³ö)µÄ¶ÑÕ»
+     * å°†LinkedListå½“ä½œ LIFO(åè¿›å…ˆå‡º)çš„å †æ ˆ
      */
     private static void useLinkedListAsLIFO() {
         System.out.println("\nuseLinkedListAsLIFO");
-        // ĞÂ½¨Ò»¸öLinkedList
+        // æ–°å»ºä¸€ä¸ªLinkedList
         LinkedList stack = new LinkedList();
 
-        // ½«1,2,3,4Ìí¼Óµ½¶ÑÕ»ÖĞ
+        // å°†1,2,3,4æ·»åŠ åˆ°å †æ ˆä¸­
         stack.push("1");
         stack.push("2");
         stack.push("3");
         stack.push("4");
-        // ´òÓ¡¡°Õ»¡±
+        // æ‰“å°â€œæ ˆâ€
         System.out.println("stack:"+stack);
 
-        // É¾³ı¡°Õ»¶¥ÔªËØ¡±
+        // åˆ é™¤â€œæ ˆé¡¶å…ƒç´ â€
         System.out.println("stack.pop():"+stack.pop());
 
-        // È¡³ö¡°Õ»¶¥ÔªËØ¡±
+        // å–å‡ºâ€œæ ˆé¡¶å…ƒç´ â€
         System.out.println("stack.peek():"+stack.peek());
 
-        // ´òÓ¡¡°Õ»¡±
+        // æ‰“å°â€œæ ˆâ€
         System.out.println("stack:"+stack);
     }
 
     /**
-     * ½«LinkedListµ±×÷ FIFO(ÏÈ½øÏÈ³ö)µÄ¶ÓÁĞ
+     * å°†LinkedListå½“ä½œ FIFO(å…ˆè¿›å…ˆå‡º)çš„é˜Ÿåˆ—
      */
     private static void useLinkedListAsFIFO() {
         System.out.println("\nuseLinkedListAsFIFO");
-        // ĞÂ½¨Ò»¸öLinkedList
+        // æ–°å»ºä¸€ä¸ªLinkedList
         LinkedList queue = new LinkedList();
 
-        // ½«10,20,30,40Ìí¼Óµ½¶ÓÁĞ¡£Ã¿´Î¶¼ÊÇ²åÈëµ½Ä©Î²
+        // å°†10,20,30,40æ·»åŠ åˆ°é˜Ÿåˆ—ã€‚æ¯æ¬¡éƒ½æ˜¯æ’å…¥åˆ°æœ«å°¾
         queue.add("10");
         queue.add("20");
         queue.add("30");
         queue.add("40");
-        // ´òÓ¡¡°¶ÓÁĞ¡±
+        // æ‰“å°â€œé˜Ÿåˆ—â€
         System.out.println("queue:"+queue);
 
-        // É¾³ı(¶ÓÁĞµÄµÚÒ»¸öÔªËØ)
+        // åˆ é™¤(é˜Ÿåˆ—çš„ç¬¬ä¸€ä¸ªå…ƒç´ )
         System.out.println("queue.remove():"+queue.remove());
 
-        // ¶ÁÈ¡(¶ÓÁĞµÄµÚÒ»¸öÔªËØ)
+        // è¯»å–(é˜Ÿåˆ—çš„ç¬¬ä¸€ä¸ªå…ƒç´ )
         System.out.println("queue.element():"+queue.element());
 
-        // ´òÓ¡¡°¶ÓÁĞ¡±
+        // æ‰“å°â€œé˜Ÿåˆ—â€
         System.out.println("queue:"+queue);
     }
 }

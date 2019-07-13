@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 //  public void body(String message) { System.out.println("body"); }
 //  public void send() { System.out.println("sending..."); }
 //}
-//public class com.lwptest.basic.JAVA8.lambdaDesignPattern.LightweightStrategy {
+//public class com.lwptest.Basic.JAVA8.lambdaDesignPattern.LightweightStrategy {
 //  public static void main(String[] args) {
 //    Mailer mailer = new Mailer();
 //    mailer.from("builder@agiledeveloper.com");

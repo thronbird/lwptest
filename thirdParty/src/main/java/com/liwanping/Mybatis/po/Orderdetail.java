@@ -1,4 +1,4 @@
-package Mybatis.po;
+package com.liwanping.Mybatis.po;
 
 public class Orderdetail {
     private Integer id;

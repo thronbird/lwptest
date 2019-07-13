@@ -1,4 +1,4 @@
-package redis;
+package com.liwanping.redis;
 
 import org.junit.Test;
 import redis.clients.jedis.Jedis;

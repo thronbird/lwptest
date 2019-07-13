@@ -1,9 +1,9 @@
-package Mybatis.mapper;
+package com.liwanping.Mybatis.mapper;
 
 
-import Mybatis.po.User;
-import Mybatis.po.UserCustom;
-import Mybatis.po.UserQueryVo;
+import com.liwanping.Mybatis.po.User;
+import com.liwanping.Mybatis.po.UserCustom;
+import com.liwanping.Mybatis.po.UserQueryVo;
 
 import java.util.List;
 
