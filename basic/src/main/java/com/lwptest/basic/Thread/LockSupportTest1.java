@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.locks.LockSupport;
 
-@Transactional
 public class LockSupportTest1 {
 
     private static Thread mainThread;
