@@ -1,6 +1,7 @@
 package com.lwptest.basic.interview.thread.commu;
 
 import javax.annotation.security.RunAs;
+import java.util.concurrent.Executors;
 
 /**
  * Producer and Consumer test
@@ -15,6 +16,8 @@ public class PCTest {
         new Thread(new Producer(cl), "producer2").start();
         new Thread(new Producer(cl), "producer3").start();
         new Thread(new Consumer(cl), "consumer1").start();
+
+        Executors.newCachedThreadPool();
     }
 }
 
