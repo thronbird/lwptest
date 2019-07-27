@@ -1,5 +1,9 @@
 package com.lwptest.basic.interview;
 
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * 顺序打印abc
  *
@@ -10,29 +14,49 @@ package com.lwptest.basic.interview;
 public class ThreadAlteV2{
     private int signal =0;
 
-    synchronized void a() throws InterruptedException {
-        while(signal !=0){
-            wait();
+    private Lock lock =  new ReentrantLock();
+    private Condition con1 = lock.newCondition();
+    private Condition con2 = lock.newCondition();
+    private Condition con3 = lock.newCondition();
+
+     void a() throws InterruptedException {
+        try{
+            lock.lock();
+            while(signal !=0){
+                con1.await();
+            }
+            System.out.println("a");
+            signal=1;
+            con2.signal();
+        }finally {
+            lock.unlock();
         }
-        System.out.println("a");
-        signal=1;
-        notifyAll();
     }
     synchronized void b() throws InterruptedException {
-        while(signal !=1){
-            wait();
+        try{
+            lock.lock();
+            while(signal !=1){
+                con2.await();
+            }
+            System.out.println("b");
+            signal=2;
+            con3.signal();
+        }finally {
+            lock.unlock();
         }
-        System.out.println("b");
-        signal=2;
-        notifyAll();
     }
     synchronized void c() throws InterruptedException {
-        while(signal !=2){
-            wait();
+        try{
+            lock.lock();
+            while(signal !=2){
+                con3.await();
+            }
+            System.out.println("c");
+            signal=0;
+            con1.signal();
+        }finally {
+            lock.unlock();
         }
-        System.out.println("c");
-        signal=0;
-        notifyAll();
     }
 
     public static void main(String[] args) throws InterruptedException {
