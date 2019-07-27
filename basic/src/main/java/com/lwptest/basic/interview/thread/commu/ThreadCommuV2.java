@@ -1,4 +1,4 @@
-package com.lwptest.basic.interview;
+package com.lwptest.basic.interview.thread.commu;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -11,8 +11,9 @@ import java.util.concurrent.locks.ReentrantLock;
  * @since 2019-07-15
  */
 
-public class ThreadAlteV2{
+public class ThreadCommuV2 {
     private int signal =0;
+    private int x =0;
 
     private Lock lock =  new ReentrantLock();
     private Condition con1 = lock.newCondition();
@@ -25,7 +26,7 @@ public class ThreadAlteV2{
             while(signal !=0){
                 con1.await();
             }
-            System.out.println("a");
+            System.out.println("a" + ++x);
             signal=1;
             con2.signal();
         }finally {
@@ -60,7 +61,7 @@ public class ThreadAlteV2{
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ThreadAlteV2 v = new ThreadAlteV2();
+        ThreadCommuV2 v = new ThreadCommuV2();
         A a = new A(v);
         B b = new B(v);
         C c = new C(v);
@@ -74,8 +75,8 @@ public class ThreadAlteV2{
 }
 
 class A implements Runnable{
-    ThreadAlteV2 v;
-    A(ThreadAlteV2 v){
+    ThreadCommuV2 v;
+    A(ThreadCommuV2 v){
         this.v=v;
     }
     public void run(){
@@ -90,8 +91,8 @@ class A implements Runnable{
     }
 }
 class B implements Runnable{
-    ThreadAlteV2 v;
-    B(ThreadAlteV2 v){
+    ThreadCommuV2 v;
+    B(ThreadCommuV2 v){
         this.v=v;
     }
     public void run(){
@@ -107,8 +108,8 @@ class B implements Runnable{
 }
 
 class C implements Runnable{
-    ThreadAlteV2 v;
-    C(ThreadAlteV2 v){
+    ThreadCommuV2 v;
+    C(ThreadCommuV2 v){
         this.v=v;
     }
     public void run(){

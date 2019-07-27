@@ -1,4 +1,4 @@
-package com.lwptest.basic.interview;
+package com.lwptest.basic.interview.thread.commu;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,17 +10,17 @@ import java.util.concurrent.locks.ReentrantLock;
  * @since 2019-07-15
  */
 
-public class ThreadAlteV1X implements Runnable {
+public class ThreadCommuV1X implements Runnable {
         private AtomicInteger x = new AtomicInteger(1);
         private ReentrantLock lock = new ReentrantLock(true);
         private Semaphore sea = new Semaphore(75);
 
         public static void main(String[] args) throws InterruptedException {
-            new ThreadAlteV1X().test();
+            new ThreadCommuV1X().test();
         }
 
         public void test() throws InterruptedException {
-            ThreadAlteV1X test = new ThreadAlteV1X();
+            ThreadCommuV1X test = new ThreadCommuV1X();
             Thread thread1 = new Thread(test);
             Thread thread2 = new Thread(test);
             Thread thread3 = new Thread(test);
