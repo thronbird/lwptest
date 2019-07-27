@@ -10,17 +10,17 @@ import java.util.concurrent.locks.ReentrantLock;
  * @since 2019-07-15
  */
 
-public class AliInterview implements Runnable {
+public class ThreadAlteV1X implements Runnable {
         private AtomicInteger x = new AtomicInteger(1);
         private ReentrantLock lock = new ReentrantLock(true);
         private Semaphore sea = new Semaphore(75);
 
         public static void main(String[] args) throws InterruptedException {
-            new AliInterview().test();
+            new ThreadAlteV1X().test();
         }
 
         public void test() throws InterruptedException {
-            AliInterview test = new AliInterview();
+            ThreadAlteV1X test = new ThreadAlteV1X();
             Thread thread1 = new Thread(test);
             Thread thread2 = new Thread(test);
             Thread thread3 = new Thread(test);

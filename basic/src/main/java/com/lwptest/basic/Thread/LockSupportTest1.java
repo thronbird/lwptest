@@ -22,7 +22,7 @@ public class LockSupportTest1 {
 
         System.out.println(Thread.currentThread().getName()+" block");
         // 主线程阻塞
-        LockSupport.park(mainThread);
+        LockSupport.park();
 
         System.out.println(Thread.currentThread().getName()+" continue");
     }
