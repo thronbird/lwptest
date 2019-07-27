@@ -1,39 +1,36 @@
 package com.lwptest.basic.interview;
 
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
+
 /**
  * @author liwanping
- * @since 2019-07-14
+ * @since 2019-07-27
  */
-public class Test implements Runnable {
-    int b = 100;
+public class Test {
+    public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
+        Executors.newCachedThreadPool();
+        Semaphore se = new Semaphore(10);
+        CountDownLatch countDownLatch = new CountDownLatch(10);
 
-    synchronized void m1() throws InterruptedException {
-        b = 1000;
-        Thread.sleep(500);
-        System.out.println("b=" + b);
-    }
-
-    synchronized void m2() throws InterruptedException {
-        Thread.sleep(250);
-        b = 2000;
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        Test tt = new Test();
-        Thread t = new Thread(tt);
-        t.start();
-        tt.m2();
-        System.out.println("mainb=" + tt.b);
-    }
-
-    @Override
-    public void run() {
-        try {
-            m1();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        CyclicBarrier c = new CyclicBarrier(10,()->{
+            System.out.println("ccc");
+        });
+        for(int i=0;i<=10;i++){
+            new Thread(() -> {
+                System.out.println("ddd");
+                try {
+                    c.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+            }).start();
         }
+        Thread.sleep(6000);
     }
 }
-
-

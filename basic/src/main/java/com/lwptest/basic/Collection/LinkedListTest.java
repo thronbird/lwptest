@@ -42,7 +42,7 @@ public class LinkedListTest {
         llist.add(1, "4");
 
 
-        System.out.println("\nTest \"addFirst(), removeFirst(), getFirst()\"");
+        System.out.println("\nCaclVal \"addFirst(), removeFirst(), getFirst()\"");
         // (01) 将“10”添加到第一个位置。  失败的话，抛出异常！
         llist.addFirst("10");
         System.out.println("llist:"+llist);
@@ -53,7 +53,7 @@ public class LinkedListTest {
         System.out.println("llist.getFirst():"+llist.getFirst());
 
 
-        System.out.println("\nTest \"offerFirst(), pollFirst(), peekFirst()\"");
+        System.out.println("\nCaclVal \"offerFirst(), pollFirst(), peekFirst()\"");
         // (01) 将“10”添加到第一个位置。  返回true。
         llist.offerFirst("10");
         System.out.println("llist:"+llist);
@@ -64,7 +64,7 @@ public class LinkedListTest {
         System.out.println("llist.peekFirst():"+llist.peekFirst());
 
 
-        System.out.println("\nTest \"addLast(), removeLast(), getLast()\"");
+        System.out.println("\nCaclVal \"addLast(), removeLast(), getLast()\"");
         // (01) 将“20”添加到最后一个位置。  失败的话，抛出异常！
         llist.addLast("20");
         System.out.println("llist:"+llist);
@@ -75,7 +75,7 @@ public class LinkedListTest {
         System.out.println("llist.getLast():"+llist.getLast());
 
 
-        System.out.println("\nTest \"offerLast(), pollLast(), peekLast()\"");
+        System.out.println("\nCaclVal \"offerLast(), pollLast(), peekLast()\"");
         // (01) 将“20”添加到第一个位置。  返回true。
         llist.offerLast("20");
         System.out.println("llist:"+llist);
