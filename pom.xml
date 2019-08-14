@@ -107,7 +107,8 @@
 
     </dependencyManagement>
     <modules>
-        <module>basic</module>
+        <module>java</module>
         <module>thirdParty</module>
+        <module>kotlin</module>
     </modules>
 </project>
