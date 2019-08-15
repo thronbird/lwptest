@@ -1,3 +1,5 @@
+package com.liwanping.kotlin.lambda
+
 fun <T, R> Collection<T>.fold(
         initial: R,
         combine: (acc: R, nextElement: T) -> R
@@ -28,3 +30,4 @@ fun main(args: Array<String>) {
 // Function references can also be used for higher-order function calls:
     val product = items.fold(1, Int::times)
 }
+
