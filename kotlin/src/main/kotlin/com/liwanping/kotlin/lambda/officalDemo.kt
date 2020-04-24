@@ -29,5 +29,15 @@ fun main(args: Array<String>) {
 
 // Function references can also be used for higher-order function calls:
     val product = items.fold(1, Int::times)
+
+    val animals = listOf("raccoon", "reindeer", "cow", "camel", "giraffe", "goat")
+
+// grouping by first char and collect only max of contains vowels
+    val compareByVowelCount = compareBy { s: String -> s.count { it in "aeiou" } }
+
+    val maxVowels = animals.groupingBy { it.first() }.reduce { _, a, b -> maxOf(a, b, compareByVowelCount) }
+
+    println(maxVowels) // {r=reindeer, c=camel, g=giraffe}
+
 }
 
