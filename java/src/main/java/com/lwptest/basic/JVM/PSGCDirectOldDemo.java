@@ -25,6 +25,5 @@ public class PSGCDirectOldDemo {
 		//以-Xms20M -Xmn10M -Xmx20M -XX:SurvivorRatio=8 -XX:+UseParallelGC执行以上代码，jstat可
 		//查看到，bytes直接在旧生代上分配了。
 
-		Class.forName()
 	}
 }
