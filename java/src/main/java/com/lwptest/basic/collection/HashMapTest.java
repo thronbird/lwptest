@@ -1,4 +1,4 @@
-package com.lwptest.basic.Collection;
+package com.lwptest.basic.collection;
 
 /**
  * Created by liwanping on 2018-03-08

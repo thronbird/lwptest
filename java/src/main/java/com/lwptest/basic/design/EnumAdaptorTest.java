@@ -1,4 +1,4 @@
-package com.lwptest.basic.design.adaptor;
+package com.lwptest.basic.design;
 
 import java.util.Collection;
 import java.util.Enumeration;
