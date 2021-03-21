@@ -1,4 +1,4 @@
-package com.lwp.java.basic.lock;
+package com.lwp.java.basic.concurrency.lock;
 
 import java.util.List;
 import java.util.Vector;

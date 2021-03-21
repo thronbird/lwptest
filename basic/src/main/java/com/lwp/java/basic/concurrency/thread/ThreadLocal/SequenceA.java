@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread.ThreadLocal;
+package com.lwp.java.basic.concurrency.thread.ThreadLocal;
 
 public class SequenceA implements Sequence{
 

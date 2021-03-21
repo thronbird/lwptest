@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread.ThreadLocal;
+package com.lwp.java.basic.concurrency.thread.ThreadLocal;
 
 /**
   from 从零开始写javaweb框架

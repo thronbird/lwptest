@@ -1,13 +1,10 @@
-package com.lwp.java.basic.thread;
+package com.lwp.java.basic.concurrency.thread;
 
 /**
  * Created by liwanping on 2018-02-28
  */
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+
+import java.util.concurrent.*;
 
 /**
  * 线程池

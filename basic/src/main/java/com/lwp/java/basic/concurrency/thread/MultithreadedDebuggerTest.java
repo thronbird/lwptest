@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread;
+package com.lwp.java.basic.concurrency.thread;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

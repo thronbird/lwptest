@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread;
+package com.lwp.java.basic.concurrency.thread;
 
 /**
  * Created by liwanping on 2018-03-22

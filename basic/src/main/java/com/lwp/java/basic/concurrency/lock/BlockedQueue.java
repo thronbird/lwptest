@@ -1,4 +1,4 @@
-package com.lwp.java.basic.lock;
+package com.lwp.java.basic.concurrency.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

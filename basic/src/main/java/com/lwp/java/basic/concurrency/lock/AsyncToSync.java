@@ -1,4 +1,4 @@
-package com.lwp.java.basic.lock;
+package com.lwp.java.basic.concurrency.lock;
 
 //incubator-dubbo/dubbo-remoting/dubbo-remoting-api/src/main/java/org/apache/dubbo/remoting/exchange/support/DefaultFuture.java
 public class AsyncToSync {

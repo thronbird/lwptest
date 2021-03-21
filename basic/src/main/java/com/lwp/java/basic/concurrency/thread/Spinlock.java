@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread;
+package com.lwp.java.basic.concurrency.thread;
 
 /**
  * 利用volatile实现自旋锁控制线程执行顺序

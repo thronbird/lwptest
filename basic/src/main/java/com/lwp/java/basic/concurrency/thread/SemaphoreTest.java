@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread;
+package com.lwp.java.basic.concurrency.thread;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

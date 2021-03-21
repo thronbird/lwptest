@@ -1,4 +1,4 @@
-package com.lwp.java.basic.thread;
+package com.lwp.java.basic.concurrency.thread;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;

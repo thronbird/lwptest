@@ -1,4 +1,4 @@
-package com.lwp.java.basic.lock;
+package com.lwp.java.basic.concurrency.lock;
 
 import java.util.Vector;
 import java.util.concurrent.CyclicBarrier;
@@ -18,6 +18,11 @@ public class CheckOrder<P, D> {
     Vector<D> dos;
     // 执行回调的线程池
     Executor executor =
+            /**
+             * 回调函数必须使用线程池
+             * CyclicBarrier 是同步调用回调函数之后才唤醒等待的线程，如果我们在回调函数里直接调用 check() 方法，
+             * 那就意味着在执行 check() 的时候，是不能同时执行 getPOrders() 和 getDOrders() 的，这样就起不到提升性能的作用。
+             */
             /* 设置线程池为单个线程可以保证对账的操作按顺序执行
             线程池大小为1是必要的，如果设置为多个，有可能会两个线程 A 和 B 同时查询，A 的订单先返回，B 的派送单先返回，造成队列中的数据不匹配；所以1个线程实现生产数据串行执行，保证数据安全
         如果用Future 的话可以更方便一些：
