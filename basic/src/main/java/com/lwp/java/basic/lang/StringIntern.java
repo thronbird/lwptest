@@ -1,4 +1,4 @@
-package com.lwp.java.basic.JVM.dive;
+package com.lwp.java.basic.lang;
 
 /**
  * @author liwanping
